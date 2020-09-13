@@ -1,0 +1,1 @@
+Here you can monitor whether your job is queued (‘qw’), running (‘r’) or completed. You can also receive notifications when jobs are started or completed if the Job Notification box is selected when you submit your request.

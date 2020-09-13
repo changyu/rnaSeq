@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function myFunction() {
+    var x = document.getElementById("fname");
+    x.value = x.value.toUpperCase();
+}
+function setfolder(){
+    
+
+}
+</script>
+</head>
+<body>
+
+<p>A function is triggered when the user releases a key in the input field. The function transforms the character to upper case.</p>
+Enter your name: <input type="text" id="fname" onkeyup="myFunction()">
+projectName = 'GIST_ChIP' #Project folder name
+gffFolder =
+
+Enter your project name: <input type="text" id="pj_name" onkeyup="myFunction()">
+
+dataFile = '/data/sysdir/home/mlh37/projects/%s/GIST_datatable.txt' % (projectName) #ensure correct path
+genome ='hg19'
+annotFile = '/usr/local/BradnerPipeline/annotation/%s_refseq.ucsc' % (genome)
+
+#project folders
+projectFolder = '/data/sysdir/home/mlh37/projects/%s/' % (projectName) #PATH TO YOUR PROJECT FOLDER
+
+#standard folder names
+gffFolder ='%sgff/' % (projectFolder)
+macsFolder = '%smacsFolder/' % (projectFolder)
+macsEnrichedFolder = '%smacsEnriched/' % (projectFolder)
+mappedEnrichedFolder = '%smappedEnriched/' % (projectFolder)
+mappedFolder = '%smappedFolder/' % (projectFolder)
+wiggleFolder = '%swiggles/' % (projectFolder)
+metaFolder = '%smeta/' % (projectFolder)
+
+#making folders
+folderList = [gffFolder,macsFolder,macsEnrichedFolder,mappedEnrichedFolder,mappedFolder,wiggleFolder,metaFolder]
+
+for folder in folderList:
+    pipeline_dfci.formatFolder(folder,True)
+
+</body>
+</html>
